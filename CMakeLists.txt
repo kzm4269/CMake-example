@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.5)
+project(example)
+include("${CMAKE_SOURCE_DIR}/DefaultConfig.cmake" REQUIRED)
+include("${CMAKE_SOURCE_DIR}/FindPackages.cmake" REQUIRED)
+
+# sources
+file(GLOB ALL_SOURCES "src/*.h" "src/*.cpp")
+
+# targets
+add_executable(${CMAKE_PROJECT_NAME} ${ALL_SOURCES})
+target_link_libraries(${CMAKE_PROJECT_NAME} ${ALL_LIBRARIES})
+
