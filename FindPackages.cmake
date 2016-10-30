@@ -36,9 +36,7 @@ set(ALL_LIBRARIES ${ALL_LIBRARIES} ${X11_LIBRARIES})
 
 
 # conan
-if(NOT EXISTS "${CMAKE_BINARY_DIR}/conanbuildinfo.cmake")
-	execute_process(COMMAND conan install "${CMAKE_SOURCE_DIR}")
-endif()
+execute_process(COMMAND conan install "${CMAKE_SOURCE_DIR}")
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 include_directories(SYSTEM ${CONAN_INCLUDE_DIRS})
 
