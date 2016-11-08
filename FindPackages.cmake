@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.6)
 
 # Python
 find_package(PythonLibs REQUIRED)
@@ -11,10 +11,6 @@ find_package(HDF5 REQUIRED)
 include_directories(${HDF5_INCLUDE_DIRS})
 link_directories("${HDF5_LIBRARY_DIRS}")
 set(ALL_LIBRARIES ${LIBRARIES} ${HDF5_LIBRARIES})
-foreach(library IN LISTS HDF5_LIBRARIES)
-	string(REGEX REPLACE "/libhdf5\." "/libhdf5_cpp\." library "${library}")
-	set(ALL_LIBRARIES ${ALL_LIBRARIES} "${library}")
-endforeach()
 
 # OpenGL
 find_package(OpenGL REQUIRED)
