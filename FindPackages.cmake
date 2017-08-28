@@ -15,7 +15,7 @@ set(ALL_LIBRARIES ${LIBRARIES} ${HDF5_LIBRARIES})
 # OpenGL
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIRS})
-link_directories("${OPENCV_LIBRARY_DIRS}")
+link_directories("${OPENGL_LIBRARY_DIRS}")
 set(ALL_LIBRARIES ${ALL_LIBRARIES} ${OPENGL_LIBRARIES})
 
 # GLUT
@@ -29,6 +29,12 @@ find_package(X11 REQUIRED)
 include_directories(${X11_INCLUDE_DIR})
 link_directories("${X11_LIBRARY_DIRS}")
 set(ALL_LIBRARIES ${ALL_LIBRARIES} ${X11_LIBRARIES})
+
+# OpenCV
+find_package(OpenCV REQUIRED)
+include_directories(${OPENCV_INCLUDE_DIRS})
+link_directories("${OPENCV_LIBRARY_DIRS}")
+set(ALL_LIBRARIES ${ALL_LIBRARIES} ${OPENCV_LIBRARIES})
 
 
 # conan
